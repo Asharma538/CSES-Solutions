@@ -23,42 +23,8 @@ string no = "NO";
 
 
 void phod(){
-    ll n,a,b;
-    cin>>n>>a>>b;
-
-    int equal_opportunities = n - a - b;
-    if (equal_opportunities < 0){
-        print(no); return;
-    }
-
-    vector<int> seqa(n),seqb(n);
-    repeat(i,0,n){
-        seqa[i] = n-i;
-    }
-
-    int bcard = n;
-    repeat(i,0,equal_opportunities){
-        seqb[i] = bcard--;
-    }
-    repeat(i,n-b,n){
-        seqb[i] = bcard--;
-        if ( seqa[i] >= seqb[i]){
-            print(no);
-            return;
-        }
-    }
-    repeat(i,equal_opportunities,equal_opportunities+a){
-        seqb[i] = bcard--;
-        if ( seqa[i] <= seqb[i]){
-            print(no);
-            return;
-        }
-    }
-
-    print(yes);
-    print_it(seqa)
-    print_it(seqb);
-    return;
+    ll n;
+    cin>>n;
 }
 
 int main(){
